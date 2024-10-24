@@ -13,7 +13,7 @@
 		},
 		{
 			icon: { name: "home", size: 26 },
-			component: "./demoPage/Counter.svelte",
+			component: "./mainPage/+page.svelte",
 		},
 		{
 			icon: { name: "category", size: 26 },

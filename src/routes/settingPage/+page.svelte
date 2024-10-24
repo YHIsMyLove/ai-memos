@@ -12,7 +12,7 @@
     <NavBar title={"设置"} on:clickleft={() => window.history.back()} />
 </div>
 
-<CellGroup mx="0" radius="none">
+<CellGroup>
     <a href="webdavPage">
         <Cell
             title="组合使用"
@@ -33,7 +33,7 @@
         radius="none"
     />
 </CellGroup>
-<CellGroup mx="0" radius="none">
+<CellGroup>
     <Cell
         title="组合使用"
         detail="无横向间距"

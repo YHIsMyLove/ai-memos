@@ -1,7 +1,10 @@
 <script>
+    import HeaderControlBar from "../../components/HeaderControlBar.svelte";
+
     let lang = sessionStorage.getItem("lang") === "en_US" ? "en_US" : "zh_CN";
     $: isZh = lang === "zh_CN";
 </script>
+
 
 <div class="flex justify-center items-center text-center gap-4 pt-10">
     <a
