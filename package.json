@@ -1,21 +1,38 @@
 {
-    "name": "note",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "devDependencies": {
-        "@sveltejs/adapter-static": "^2.0.3",
-        "@sveltejs/kit": "^1.25.1",
-        "autoprefixer": "^10.4.16",
-        "postcss": "^8.4.31",
-        "rollup-plugin-stdf-icon": "^0.0.14",
-        "stdf": "^0.4.3",
-        "svelte": "^4.2.1",
-        "tailwindcss": "^3.3.3",
-        "vite": "^4.4.9"
-    },
-    "type": "module"
+  "name": "vite-svelte-ts-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
+    "server": "cd server && nest start --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tsconfig/svelte": "^5.0.4",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "svelte": "^4.2.19",
+    "svelte-check": "^3.8.6",
+    "tailwindcss": "^3.4.1",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/typeorm": "^10.0.0",
+    "date-fns": "^3.3.1",
+    "marked": "^12.0.0",
+    "reflect-metadata": "^0.2.0",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.0"
+  }
 }
