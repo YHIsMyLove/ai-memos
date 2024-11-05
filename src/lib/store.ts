@@ -114,9 +114,13 @@ function backUp() {
 }
 
 /**
- * 当前的日期
+ * 当前的月份
  */
 export let globalCurrentDate = writable(new Date());
+/**
+ * 当前的日期
+ */
+export let globalCurrentDay = writable(new Date());
 export const notes = createNoteStore();
 export const tags = createTagStore();
 export const statistics = noteStatistics();
@@ -125,7 +129,9 @@ export const statistics = noteStatistics();
 notes.fetchNotes();
 tags.fetchTags();
 
-
+globalCurrentDay.subscribe(date => {
+  notes.fetchNotes(date);
+})
 globalCurrentDate.subscribe(date => {
   notes.fetchNotes(date);
   statistics.countNotesByMonth(date);

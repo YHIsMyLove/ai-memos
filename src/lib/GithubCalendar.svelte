@@ -1,6 +1,11 @@
 <script lang="ts">
     import { onMount, createEventDispatcher } from "svelte";
-    import { globalCurrentDate, notes, statistics } from "./store";
+    import {
+        globalCurrentDate,
+        globalCurrentDay,
+        notes,
+        statistics,
+    } from "./store";
 
     const dispatch = createEventDispatcher();
 
@@ -30,7 +35,7 @@
             currentDate.getMonth() + increment,
             1,
         );
-        globalCurrentDate.set(currentDate);        
+        globalCurrentDate.set(currentDate);
     }
 
     /**
@@ -48,7 +53,7 @@
             ),
             contributions: current,
         });
-        globalCurrentDate.set(new Date(current.date));
+        globalCurrentDay.set(new Date(current.date));
     }
 
     $: currentMonthYear = currentDate.toLocaleString("default", {
