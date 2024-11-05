@@ -9,6 +9,9 @@ export class Tag {
   @Column({ unique: true })
   name: string;
 
+  @Column({ type: "int" })
+  noteCount: number;
+
   @ManyToMany(() => Note, note => note.tags)
   notes: Note[];
 }

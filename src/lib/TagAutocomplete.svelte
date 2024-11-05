@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { tags } from './store';
-  import { createEventDispatcher } from 'svelte';
+  import { tags } from "./store";
+  import { createEventDispatcher } from "svelte";
 
-  export let query = '';
+  export let query = "";
   export let position = { top: 0, left: 0 };
   export let visible = false;
 
@@ -10,18 +10,18 @@
 
   $: filteredTags = query
     ? $tags
-        .filter(tag => tag.name.toLowerCase().startsWith(query.toLowerCase()))
-        .sort((a, b) => b.count - a.count)
-    : $tags.sort((a, b) => b.count - a.count).slice(0, 5);
+        .filter((tag) => tag.name.toLowerCase().startsWith(query.toLowerCase()))
+        .sort((a, b) => b.noteCount - a.noteCount)
+    : $tags.sort((a, b) => b.noteCount - a.noteCount).slice(0, 5);
 
   function selectTag(tagName: string) {
-    dispatch('select', tagName);
+    dispatch("select", tagName);
   }
 </script>
 
 {#if visible}
-  <div 
-    class="absolute z-50 bg-white rounded-lg shadow-lg border border-gray-200 max-h-48 overflow-y-auto min-w-[200px]"
+  <div
+    class="absolute z-50 bg-white rounded-lg shadow-lg border border-gray-200 max-h-48 h-48 overflow-y-auto min-w-[200px]"
     style="top: {position.top}px; left: {position.left}px"
   >
     {#if filteredTags.length > 0}
@@ -31,7 +31,7 @@
           on:click={() => selectTag(tag.name)}
         >
           <span>#{tag.name}</span>
-          <span class="text-sm text-gray-500">{tag.count}</span>
+          <span class="text-sm text-gray-500">{tag.noteCount}</span>
         </button>
       {/each}
     {:else}
