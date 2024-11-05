@@ -12,7 +12,7 @@ export default {
           "primary": "#121212",
           "primary-content": "#d9d9d9",
           "secondary": "#202020",
-          "secondary-content": "#666666",
+          "secondary-content": "#9D9D9D",
           "info": "#3A4359",
           "info-content": "#2B88D8",
           "accent": "#397354",

@@ -17,8 +17,14 @@
       >
         <h1 class="text-2xl font-bold">MemOS</h1>
         <div class="drawer-content flex flex-row [&_label]:px-1">
-          <label class="drawer-button btn-primary" for="my-drawer">重组</label>
-          <label class="drawer-button btn-primary" for="my-drawer">设置</label>
+          <label
+            class="drawer-button btn-primary text-secondary-content"
+            for="my-drawer">重组</label
+          >
+          <label
+            class="drawer-button btn-primary text-secondary-content"
+            for="my-drawer">设置</label
+          >
         </div>
       </div>
       <GithubCalendar />
